@@ -21,7 +21,6 @@
 		857919D02A02AEB20018D7EC /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919CF2A02AEB20018D7EC /* GroupView.swift */; };
 		857919D32A02AED10018D7EC /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919D22A02AED10018D7EC /* Course.swift */; };
 		857919D52A02D7B80018D7EC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919D42A02D7B80018D7EC /* Group.swift */; };
-		857919D82A02DAB20018D7EC /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919D72A02DAB20018D7EC /* GroupViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		857919CF2A02AEB20018D7EC /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		857919D22A02AED10018D7EC /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		857919D42A02D7B80018D7EC /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		857919D72A02DAB20018D7EC /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +132,6 @@
 		857919D62A02DA640018D7EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				857919D72A02DAB20018D7EC /* GroupViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -223,7 +220,6 @@
 				8570596E2A015435008AD532 /* CourseView.swift in Sources */,
 				8570596C2A015435008AD532 /* course_paperApp.swift in Sources */,
 				857919CA2A029BF30018D7EC /* ScheduleParserError.swift in Sources */,
-				857919D82A02DAB20018D7EC /* GroupViewModel.swift in Sources */,
 				857919C02A0263870018D7EC /* HTMLParser.swift in Sources */,
 				857919CE2A02A34B0018D7EC /* Subject.swift in Sources */,
 				857919C22A0281E30018D7EC /* Constants.swift in Sources */,
