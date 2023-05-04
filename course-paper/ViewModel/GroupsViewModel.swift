@@ -1,8 +1,9 @@
 import Foundation
 import SwiftSoup
 
-class GroupViewModel: ObservableObject {
+class GroupsViewModel: ObservableObject {
     @Published var groups: [Group] = []
+    @Published var loading = true
     
     func loadData(url: String) {
         let apiService = APIService(url: url)
@@ -18,10 +19,11 @@ class GroupViewModel: ObservableObject {
                 
                 for groupLink in groupLinks.array() {
                     let name = try groupLink.text()
-                    let link = try groupLink.attr("href")
+                    let link = try groupLink.attr("href")   
                     
                     DispatchQueue.main.async {
-                        self.groups.append(Group(name: name, url: link))
+                        self.groups.append(Group(name: name, url: link, schedule: nil))
+                        self.loading = false
                     }
                 }
                 
@@ -29,6 +31,6 @@ class GroupViewModel: ObservableObject {
                 print("Error: \(error.localizedDescription)")
             }
             
-        }
+        }        
     }
 }

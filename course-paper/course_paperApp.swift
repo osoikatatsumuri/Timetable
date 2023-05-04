@@ -4,7 +4,7 @@ import SwiftUI
 struct course_paperApp: App {
     var body: some Scene {
         WindowGroup {
-            CourseView()
+            CoursesView()
         }
     }
 }

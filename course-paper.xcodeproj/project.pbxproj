@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8562C9C72A0403AE00A522D7 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8562C9C62A0403AE00A522D7 /* GroupViewModel.swift */; };
+		8562C9C72A0403AE00A522D7 /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8562C9C62A0403AE00A522D7 /* GroupsViewModel.swift */; };
 		8570596C2A015435008AD532 /* course_paperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8570596B2A015435008AD532 /* course_paperApp.swift */; };
-		8570596E2A015435008AD532 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8570596D2A015435008AD532 /* CourseView.swift */; };
+		8570596E2A015435008AD532 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8570596D2A015435008AD532 /* CoursesView.swift */; };
 		857059702A015436008AD532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8570596F2A015436008AD532 /* Assets.xcassets */; };
 		857059732A015436008AD532 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857059722A015436008AD532 /* Preview Assets.xcassets */; };
 		8570597D2A015D3C008AD532 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 8570597C2A015D3C008AD532 /* SwiftSoup */; };
@@ -19,16 +19,16 @@
 		857919C52A029B7D0018D7EC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919C42A029B7D0018D7EC /* APIService.swift */; };
 		857919CA2A029BF30018D7EC /* ScheduleParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919C92A029BF30018D7EC /* ScheduleParserError.swift */; };
 		857919CE2A02A34B0018D7EC /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919CD2A02A34B0018D7EC /* Subject.swift */; };
-		857919D02A02AEB20018D7EC /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919CF2A02AEB20018D7EC /* GroupView.swift */; };
+		857919D02A02AEB20018D7EC /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919CF2A02AEB20018D7EC /* GroupsView.swift */; };
 		857919D32A02AED10018D7EC /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919D22A02AED10018D7EC /* Course.swift */; };
 		857919D52A02D7B80018D7EC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919D42A02D7B80018D7EC /* Group.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8562C9C62A0403AE00A522D7 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
+		8562C9C62A0403AE00A522D7 /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
 		857059682A015435008AD532 /* course-paper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "course-paper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8570596B2A015435008AD532 /* course_paperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = course_paperApp.swift; sourceTree = "<group>"; };
-		8570596D2A015435008AD532 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		8570596D2A015435008AD532 /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
 		8570596F2A015436008AD532 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		857059722A015436008AD532 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8570597E2A01739B008AD532 /* ScheduleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleParser.swift; sourceTree = "<group>"; };
@@ -37,7 +37,7 @@
 		857919C42A029B7D0018D7EC /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		857919C92A029BF30018D7EC /* ScheduleParserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleParserError.swift; sourceTree = "<group>"; };
 		857919CD2A02A34B0018D7EC /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
-		857919CF2A02AEB20018D7EC /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
+		857919CF2A02AEB20018D7EC /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 		857919D22A02AED10018D7EC /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		857919D42A02D7B80018D7EC /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,8 +104,8 @@
 		857919C72A029BC80018D7EC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8570596D2A015435008AD532 /* CourseView.swift */,
-				857919CF2A02AEB20018D7EC /* GroupView.swift */,
+				8570596D2A015435008AD532 /* CoursesView.swift */,
+				857919CF2A02AEB20018D7EC /* GroupsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 		857919D62A02DA640018D7EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8562C9C62A0403AE00A522D7 /* GroupViewModel.swift */,
+				8562C9C62A0403AE00A522D7 /* GroupsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -216,14 +216,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				857919D32A02AED10018D7EC /* Course.swift in Sources */,
-				857919D02A02AEB20018D7EC /* GroupView.swift in Sources */,
+				857919D02A02AEB20018D7EC /* GroupsView.swift in Sources */,
 				857919D52A02D7B80018D7EC /* Group.swift in Sources */,
 				857919C52A029B7D0018D7EC /* APIService.swift in Sources */,
 				8570597F2A01739B008AD532 /* ScheduleParser.swift in Sources */,
-				8570596E2A015435008AD532 /* CourseView.swift in Sources */,
+				8570596E2A015435008AD532 /* CoursesView.swift in Sources */,
 				8570596C2A015435008AD532 /* course_paperApp.swift in Sources */,
 				857919CA2A029BF30018D7EC /* ScheduleParserError.swift in Sources */,
-				8562C9C72A0403AE00A522D7 /* GroupViewModel.swift in Sources */,
+				8562C9C72A0403AE00A522D7 /* GroupsViewModel.swift in Sources */,
 				857919C02A0263870018D7EC /* HTMLParser.swift in Sources */,
 				857919CE2A02A34B0018D7EC /* Subject.swift in Sources */,
 				857919C22A0281E30018D7EC /* Constants.swift in Sources */,
