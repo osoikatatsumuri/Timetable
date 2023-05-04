@@ -54,6 +54,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8562C9C52A03FE0100A522D7 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		8570595F2A015435008AD532 = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +80,7 @@
 		8570596A2A015435008AD532 /* course-paper */ = {
 			isa = PBXGroup;
 			children = (
-				857919D62A02DA640018D7EC /* ViewModel */,
+				8562C9C52A03FE0100A522D7 /* New Group */,
 				857919CC2A02A2F80018D7EC /* Models */,
 				857919C82A029BDE0018D7EC /* Utils */,
 				857919C72A029BC80018D7EC /* View */,
@@ -131,6 +138,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+<<<<<<< Updated upstream
 		857919D62A02DA640018D7EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +147,8 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> Stashed changes
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,7 +233,10 @@
 				8570596E2A015435008AD532 /* CoursesView.swift in Sources */,
 				8570596C2A015435008AD532 /* course_paperApp.swift in Sources */,
 				857919CA2A029BF30018D7EC /* ScheduleParserError.swift in Sources */,
+<<<<<<< Updated upstream
 				8562C9C72A0403AE00A522D7 /* GroupsViewModel.swift in Sources */,
+=======
+>>>>>>> Stashed changes
 				857919C02A0263870018D7EC /* HTMLParser.swift in Sources */,
 				857919CE2A02A34B0018D7EC /* Subject.swift in Sources */,
 				857919C22A0281E30018D7EC /* Constants.swift in Sources */,
