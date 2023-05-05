@@ -2,7 +2,7 @@ import Foundation
 
 struct Group: Identifiable {
     let id = UUID()
-    let name: String
+    var name: String
     let url: String
-    let schedule: [Subject]?
+    var schedule: [Subject]?
 }

@@ -8,7 +8,7 @@ class ScheduleParser {
         apiService = APIService(url: url)
     }
     
-    func getSchedule(url: String, completion: @escaping(Result<[Subject], ScheduleParserError>) -> Void) {
+    func getSchedule(completion: @escaping(Result<[Subject], ScheduleParserError>) -> Void) {
         apiService.getHTML() { html in
             guard let html = html else {
                 completion(.failure(.fetchError("Ошибка при загрузке HTML-страницы")))
@@ -41,6 +41,16 @@ class ScheduleParser {
         }
     }
     
+    private func typeOfClassProcessor(type: String) -> String {
+        if type == "л" {
+            return "Лекция"
+        } else if type == "п" {
+            return "Практика"
+        }
+        
+        return type
+    }
+    
     private func parseSubject(subjectRow: Element) -> Result<Subject, ScheduleParserError>{
         do {
             let timeRegex = /\d{1,2}.\d{2}-\d{1,2}.\d{2}/
@@ -50,8 +60,10 @@ class ScheduleParser {
             var time = try subjectRow.select("td.time").text()
             let group = try subjectRow.select("td.remarks").text()
             let subjectTeachersText = HTMLParser.getTextWithLineBreaks(element: subjectTeachers.first()!)
-            let typeOfClass = try subjectRow.select("td.lecture-practice").text()
+            var typeOfClass = try subjectRow.select("td.lecture-practice").text()
             let auditorium = try subjectRow.select("td.room").text()
+            
+            typeOfClass = self.typeOfClassProcessor(type: typeOfClass)
             
             let currentGroup = self.getGroup(group)
             let weekNumber = self.getWeekNumber(group)

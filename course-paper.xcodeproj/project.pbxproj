@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8562C9C72A0403AE00A522D7 /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8562C9C62A0403AE00A522D7 /* GroupsViewModel.swift */; };
 		8570596C2A015435008AD532 /* course_paperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8570596B2A015435008AD532 /* course_paperApp.swift */; };
 		8570596E2A015435008AD532 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8570596D2A015435008AD532 /* CoursesView.swift */; };
 		857059702A015436008AD532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8570596F2A015436008AD532 /* Assets.xcassets */; };
@@ -22,10 +21,14 @@
 		857919D02A02AEB20018D7EC /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919CF2A02AEB20018D7EC /* GroupsView.swift */; };
 		857919D32A02AED10018D7EC /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919D22A02AED10018D7EC /* Course.swift */; };
 		857919D52A02D7B80018D7EC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857919D42A02D7B80018D7EC /* Group.swift */; };
+		85CDB1772A05588800330BF8 /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CDB1762A05588800330BF8 /* GroupsViewModel.swift */; };
+		85CDB17A2A0561E200330BF8 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CDB1792A0561E200330BF8 /* ScheduleView.swift */; };
+		85CDB17C2A0568E600330BF8 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CDB17B2A0568E600330BF8 /* SubjectView.swift */; };
+		85CDB17E2A056A3500330BF8 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CDB17D2A056A3500330BF8 /* ScheduleViewModel.swift */; };
+		85CDB1802A057E6C00330BF8 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CDB17F2A057E6C00330BF8 /* CalendarManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8562C9C62A0403AE00A522D7 /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
 		857059682A015435008AD532 /* course-paper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "course-paper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8570596B2A015435008AD532 /* course_paperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = course_paperApp.swift; sourceTree = "<group>"; };
 		8570596D2A015435008AD532 /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
@@ -40,6 +43,11 @@
 		857919CF2A02AEB20018D7EC /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 		857919D22A02AED10018D7EC /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		857919D42A02D7B80018D7EC /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		85CDB1762A05588800330BF8 /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
+		85CDB1792A0561E200330BF8 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		85CDB17B2A0568E600330BF8 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
+		85CDB17D2A056A3500330BF8 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		85CDB17F2A057E6C00330BF8 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +62,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8562C9C52A03FE0100A522D7 /* New Group */ = {
+		8562C9C52A03FE0100A522D7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				85CDB1762A05588800330BF8 /* GroupsViewModel.swift */,
+				85CDB17D2A056A3500330BF8 /* ScheduleViewModel.swift */,
 			);
-			path = "New Group";
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8570595F2A015435008AD532 = {
@@ -80,7 +90,7 @@
 		8570596A2A015435008AD532 /* course-paper */ = {
 			isa = PBXGroup;
 			children = (
-				8562C9C52A03FE0100A522D7 /* New Group */,
+				8562C9C52A03FE0100A522D7 /* ViewModel */,
 				857919CC2A02A2F80018D7EC /* Models */,
 				857919C82A029BDE0018D7EC /* Utils */,
 				857919C72A029BC80018D7EC /* View */,
@@ -113,6 +123,8 @@
 			children = (
 				8570596D2A015435008AD532 /* CoursesView.swift */,
 				857919CF2A02AEB20018D7EC /* GroupsView.swift */,
+				85CDB1792A0561E200330BF8 /* ScheduleView.swift */,
+				85CDB17B2A0568E600330BF8 /* SubjectView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +135,7 @@
 				8570597E2A01739B008AD532 /* ScheduleParser.swift */,
 				857919BF2A0263870018D7EC /* HTMLParser.swift */,
 				857919C92A029BF30018D7EC /* ScheduleParserError.swift */,
+				85CDB17F2A057E6C00330BF8 /* CalendarManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -138,17 +151,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-<<<<<<< Updated upstream
-		857919D62A02DA640018D7EC /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				8562C9C62A0403AE00A522D7 /* GroupsViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-=======
->>>>>>> Stashed changes
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,20 +227,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85CDB1772A05588800330BF8 /* GroupsViewModel.swift in Sources */,
 				857919D32A02AED10018D7EC /* Course.swift in Sources */,
 				857919D02A02AEB20018D7EC /* GroupsView.swift in Sources */,
 				857919D52A02D7B80018D7EC /* Group.swift in Sources */,
 				857919C52A029B7D0018D7EC /* APIService.swift in Sources */,
+				85CDB1802A057E6C00330BF8 /* CalendarManager.swift in Sources */,
 				8570597F2A01739B008AD532 /* ScheduleParser.swift in Sources */,
 				8570596E2A015435008AD532 /* CoursesView.swift in Sources */,
 				8570596C2A015435008AD532 /* course_paperApp.swift in Sources */,
 				857919CA2A029BF30018D7EC /* ScheduleParserError.swift in Sources */,
-<<<<<<< Updated upstream
-				8562C9C72A0403AE00A522D7 /* GroupsViewModel.swift in Sources */,
-=======
->>>>>>> Stashed changes
+				85CDB17C2A0568E600330BF8 /* SubjectView.swift in Sources */,
 				857919C02A0263870018D7EC /* HTMLParser.swift in Sources */,
 				857919CE2A02A34B0018D7EC /* Subject.swift in Sources */,
+				85CDB17A2A0561E200330BF8 /* ScheduleView.swift in Sources */,
+				85CDB17E2A056A3500330BF8 /* ScheduleViewModel.swift in Sources */,
 				857919C22A0281E30018D7EC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

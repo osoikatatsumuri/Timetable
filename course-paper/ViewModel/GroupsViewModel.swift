@@ -19,7 +19,7 @@ class GroupsViewModel: ObservableObject {
                 
                 for groupLink in groupLinks.array() {
                     let name = try groupLink.text()
-                    let link = try groupLink.attr("href")   
+                    let link = try groupLink.attr("href")
                     
                     DispatchQueue.main.async {
                         self.groups.append(Group(name: name, url: link, schedule: nil))
@@ -31,6 +31,6 @@ class GroupsViewModel: ObservableObject {
                 print("Error: \(error.localizedDescription)")
             }
             
-        }        
+        }
     }
 }

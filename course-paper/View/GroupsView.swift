@@ -5,10 +5,12 @@ struct GroupsView: View {
     @Binding var course: Course
     
     var body: some View {
-        NavigationView {
+        VStack {
             List(viewModel.groups) { group in
-                Text(group.name)
-            }
+                NavigationLink(destination: ScheduleView(group: group)) {
+                    Text(group.name)
+                }
+            }   
             .overlay {
                 if viewModel.loading {
                     ProgressView("Loading")

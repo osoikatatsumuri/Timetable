@@ -1,6 +1,7 @@
 import Foundation
 
-struct Subject {
+struct Subject: Identifiable {
+    let id = UUID()
     var weekDay = ""
     var time = ""
     var group = ""
