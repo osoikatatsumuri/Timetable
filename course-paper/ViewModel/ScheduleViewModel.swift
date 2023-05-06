@@ -2,7 +2,7 @@ import Foundation
 
 class ScheduleViewModel: ObservableObject {
     @Published var loading = true
-    @Published var schedule: [Subject] = []
+    @Published var schedule: ContiguousArray<Subject> = []
     @Published var numberOfWeek = CalendarManager.getParityOfWeek(week: CalendarManager.getNumberOfWeek())
     
     func loadData(url: String) {
@@ -20,6 +20,4 @@ class ScheduleViewModel: ObservableObject {
             }
         }
     }
-    
-    
 }

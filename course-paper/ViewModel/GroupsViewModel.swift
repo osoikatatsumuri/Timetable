@@ -2,7 +2,7 @@ import Foundation
 import SwiftSoup
 
 class GroupsViewModel: ObservableObject {
-    @Published var groups: [Group] = []
+    @Published var groups: ContiguousArray<Group> = []
     @Published var loading = true
     
     func loadData(url: String) {

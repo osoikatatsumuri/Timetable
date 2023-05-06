@@ -10,4 +10,8 @@ struct Subject: Identifiable {
     var teacher = ""
     var subjectType = ""
     var auditorium = ""
+    
+    func isEmpty() -> Bool {
+        return weekDay == "" && subject == ""
+    }
 }

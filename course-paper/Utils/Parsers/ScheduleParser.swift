@@ -8,7 +8,7 @@ class ScheduleParser {
         apiService = APIService(url: url)
     }
     
-    func getSchedule(completion: @escaping(Result<[Subject], ScheduleParserError>) -> Void) {
+    func getSchedule(completion: @escaping(Result<ContiguousArray<Subject>, ScheduleParserError>) -> Void) {
         apiService.getHTML() { html in
             guard let html = html else {
                 completion(.failure(.fetchError("Ошибка при загрузке HTML-страницы")))
@@ -18,14 +18,16 @@ class ScheduleParser {
             do {
                 let doc = try SwiftSoup.parse(html)
                 let rowsOfSchedule = try doc.select("tr")
-                var subjects: [Subject] = []
+                var subjects: ContiguousArray<Subject> = []
                 
                 for subject in Array(rowsOfSchedule.array().dropFirst()) {
                     let result = self.parseSubject(subjectRow: subject)
                     
                     switch result {
                         case .success(let subject):
-                            subjects.append(subject)
+                            if (!subject.isEmpty()) {
+                                subjects.append(subject)
+                            }
                         case .failure(let error):
                             completion(.failure(error))
                     }
@@ -33,7 +35,7 @@ class ScheduleParser {
                 
                 completion(.success(subjects))
                 
-            } catch Exception.Error(let type, let message) {
+            } catch Exception.Error(_, let message) {
                 completion(.failure(.parseError(message)))
             } catch {
                 completion(.failure(.parseError(Constants.genericErrorMessage)))
@@ -90,10 +92,10 @@ class ScheduleParser {
                 subjectType: typeOfClass,
                 auditorium: auditorium
             )
-            
+    
             return .success(subject)
             
-        } catch Exception.Error(let type, let message) {
+        } catch Exception.Error(_, let message) {
             return .failure(.parseError(message))
         } catch {
             return .failure(.parseError(Constants.genericErrorMessage))
@@ -114,7 +116,7 @@ class ScheduleParser {
                 }
             }
             
-        } catch Exception.Error(let type, let message) {
+        } catch Exception.Error(_, let message) {
             print(message)
         } catch {
             print("error")
@@ -131,7 +133,7 @@ class ScheduleParser {
                 return String(match.0)
             }
             
-        } catch Exception.Error(let type, let message) {
+        } catch Exception.Error(_, let message) {
             print(message)
         } catch {
             print("error")

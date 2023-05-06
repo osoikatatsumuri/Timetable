@@ -26,6 +26,7 @@
 		85CDB17C2A0568E600330BF8 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CDB17B2A0568E600330BF8 /* SubjectView.swift */; };
 		85CDB17E2A056A3500330BF8 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CDB17D2A056A3500330BF8 /* ScheduleViewModel.swift */; };
 		85CDB1802A057E6C00330BF8 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CDB17F2A057E6C00330BF8 /* CalendarManager.swift */; };
+		85CDB1872A06621C00330BF8 /* TeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CDB1862A06621C00330BF8 /* TeacherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		85CDB17B2A0568E600330BF8 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
 		85CDB17D2A056A3500330BF8 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		85CDB17F2A057E6C00330BF8 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		85CDB1862A06621C00330BF8 /* TeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				857919CF2A02AEB20018D7EC /* GroupsView.swift */,
 				85CDB1792A0561E200330BF8 /* ScheduleView.swift */,
 				85CDB17B2A0568E600330BF8 /* SubjectView.swift */,
+				85CDB1862A06621C00330BF8 /* TeacherView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,9 +135,8 @@
 		857919C82A029BDE0018D7EC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				8570597E2A01739B008AD532 /* ScheduleParser.swift */,
-				857919BF2A0263870018D7EC /* HTMLParser.swift */,
-				857919C92A029BF30018D7EC /* ScheduleParserError.swift */,
+				85CDB1822A061DFE00330BF8 /* Errors */,
+				85CDB1812A061DF400330BF8 /* Parsers */,
 				85CDB17F2A057E6C00330BF8 /* CalendarManager.swift */,
 			);
 			path = Utils;
@@ -149,6 +151,23 @@
 				857919D42A02D7B80018D7EC /* Group.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		85CDB1812A061DF400330BF8 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				8570597E2A01739B008AD532 /* ScheduleParser.swift */,
+				857919BF2A0263870018D7EC /* HTMLParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		85CDB1822A061DFE00330BF8 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				857919C92A029BF30018D7EC /* ScheduleParserError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +253,7 @@
 				857919C52A029B7D0018D7EC /* APIService.swift in Sources */,
 				85CDB1802A057E6C00330BF8 /* CalendarManager.swift in Sources */,
 				8570597F2A01739B008AD532 /* ScheduleParser.swift in Sources */,
+				85CDB1872A06621C00330BF8 /* TeacherView.swift in Sources */,
 				8570596E2A015435008AD532 /* CoursesView.swift in Sources */,
 				8570596C2A015435008AD532 /* course_paperApp.swift in Sources */,
 				857919CA2A029BF30018D7EC /* ScheduleParserError.swift in Sources */,
