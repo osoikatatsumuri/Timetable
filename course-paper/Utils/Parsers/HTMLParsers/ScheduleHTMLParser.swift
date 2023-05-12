@@ -1,46 +1,11 @@
 import Foundation
 import SwiftSoup
 
-class ScheduleParser {
+class ScheduleHTMLParser {
     var apiService: APIService
     
     init(url: String) {
         apiService = APIService(url: url)
-    }
-    
-    func getSchedule(completion: @escaping(Result<ContiguousArray<Subject>, ScheduleParserError>) -> Void) {
-        apiService.getHTML() { html in
-            guard let html = html else {
-                completion(.failure(.fetchError("Ошибка при загрузке HTML-страницы")))
-                return
-            }
-            
-            do {
-                let doc = try SwiftSoup.parse(html)
-                let rowsOfSchedule = try doc.select("tr")
-                var subjects: ContiguousArray<Subject> = []
-                
-                for subject in Array(rowsOfSchedule.array().dropFirst()) {
-                    let result = self.parseSubject(subjectRow: subject)
-                    
-                    switch result {
-                        case .success(let subject):
-                            if (!subject.isEmpty()) {
-                                subjects.append(subject)
-                            }
-                        case .failure(let error):
-                            completion(.failure(error))
-                    }
-                }
-                
-                completion(.success(subjects))
-                
-            } catch Exception.Error(_, let message) {
-                completion(.failure(.parseError(message)))
-            } catch {
-                completion(.failure(.parseError(Constants.genericErrorMessage)))
-            }
-        }
     }
     
     private func typeOfClassProcessor(type: String) -> String {
@@ -53,17 +18,18 @@ class ScheduleParser {
         return type
     }
     
-    private func parseSubject(subjectRow: Element) -> Result<Subject, ScheduleParserError>{
+    public func parseSubject(subjectRow: Element) -> LessonData? {
         do {
             let timeRegex = /\d{1,2}.\d{2}-\d{1,2}.\d{2}/
             
-            let subjectTeachers = try subjectRow.select("td.subject-teachers")
-            let weekDay = try subjectRow.select("td.weekday").text()
-            var time = try subjectRow.select("td.time").text()
-            let group = try subjectRow.select("td.remarks").text()
-            let subjectTeachersText = HTMLParser.getTextWithLineBreaks(element: subjectTeachers.first()!)
-            var typeOfClass = try subjectRow.select("td.lecture-practice").text()
-            let auditorium = try subjectRow.select("td.room").text()
+            let subjectTeachers = try subjectRow.select(Constants.subjectTeacherClassName)
+            let weekDay = try subjectRow.select(Constants.weekdayClassName).text()
+            var time = try subjectRow.select(Constants.timeClassName).text()
+            let group = try subjectRow.select(Constants.groupClassName).text()
+            var typeOfClass = try subjectRow.select(Constants.typeClassName).text()
+            let auditorium = try subjectRow.select(Constants.auditoriumClassName).text()
+            
+            var subjectTeachersText = HTMLParser.getTextWithLineBreaks(element: subjectTeachers.first()!)
             
             typeOfClass = self.typeOfClassProcessor(type: typeOfClass)
             
@@ -75,6 +41,7 @@ class ScheduleParser {
             if subjectTeachersText.contains(timeRegex) {
                 if let match = subjectTeachersText.firstMatch(of: timeRegex) {
                     time = String(match.0)
+                    subjectTeachersText.replace(timeRegex, with: "")
                 }
             } else {
                 teacher = self.getTeacherName(subjectTeachersText)
@@ -82,25 +49,23 @@ class ScheduleParser {
             
             let subjectName = getSubjectName(subjectTeachersText)
             
-            let subject = Subject(
-                weekDay: weekDay,
-                time: time,
-                group: currentGroup,
-                weekNumber: weekNumber,
-                subject: subjectName,
-                teacher: teacher,
-                subjectType: typeOfClass,
-                auditorium: auditorium
-            )
-    
-            return .success(subject)
-            
-        } catch Exception.Error(_, let message) {
-            return .failure(.parseError(message))
+            return LessonData(
+                            weekDay: weekDay,
+                            time: time,
+                            group: currentGroup,
+                            weekNumber: weekNumber,
+                            subject: subjectName,
+                            teacher: teacher,
+                            subjectType: typeOfClass,
+                            auditorium: auditorium
+                        )
         } catch {
-            return .failure(.parseError(Constants.genericErrorMessage))
+            print(Constants.genericErrorMessage)
         }
+        
+        return nil
     }
+    
     
     func getWeekNumber(_ groupText: String) -> Int? {
         do {
@@ -154,7 +119,7 @@ class ScheduleParser {
     
     private func parseSubjectTeacherText(subjectTeacher: String) {
         let timeRegex = /\d{1,2}.\d{2}-\d{1,2}.\d{2}/
-
+        
         if (subjectTeacher.contains(timeRegex)) {
             
         }
@@ -163,13 +128,13 @@ class ScheduleParser {
     func getTeacherName(_ subjectTeachersText: String) -> String {
         let subjectTeachersArray = subjectTeachersText.split(separator: Constants.separator)
         let time = /\d{1,2}.\d{2}-\d{1,2}.\d{2}/
-       
+        
         if (subjectTeachersArray.count != 2) {
             return ""
         }
         
         let teacher = String(subjectTeachersArray[1])
-                
+        
         if (teacher.contains(time)) {
             debugPrint("dfdsf" +  teacher)
         }

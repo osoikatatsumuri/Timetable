@@ -1,7 +1,7 @@
 import Foundation
 
-struct Subject: Identifiable {
-    let id = UUID()
+struct LessonData: Identifiable {
+    var id = UUID()
     var weekDay = ""
     var time = ""
     var group = ""

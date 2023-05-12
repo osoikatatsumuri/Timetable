@@ -20,5 +20,113 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E48D842-8FE5-4336-BBB0-AFFEF96DACC6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "course-paper/View/TeachersView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "TeachersView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "1E48D842-8FE5-4336-BBB0-AFFEF96DACC6 - 403f9752fea35be8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of course_paper.TeachersView.viewModel : course_paper.TeachersViewModel"
+                  moduleName = "course-paper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yankurkin/Projects/Course%20paper/Timetable/course-paper/View/TeachersView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "1E48D842-8FE5-4336-BBB0-AFFEF96DACC6 - 13af5e61fbd32464"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "course_paper.TeachersView.viewModel.getter : course_paper.TeachersViewModel"
+                  moduleName = "course-paper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yankurkin/Projects/Course%20paper/Timetable/course-paper/View/TeachersView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "1E48D842-8FE5-4336-BBB0-AFFEF96DACC6 - 5d4e9028b8850c78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "course_paper.TeachersView.viewModel.setter : course_paper.TeachersViewModel"
+                  moduleName = "course-paper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yankurkin/Projects/Course%20paper/Timetable/course-paper/View/TeachersView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "1E48D842-8FE5-4336-BBB0-AFFEF96DACC6 - 6b15863923bcae6b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "course_paper.TeachersView.viewModel.modify : course_paper.TeachersViewModel"
+                  moduleName = "course-paper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yankurkin/Projects/Course%20paper/Timetable/course-paper/View/TeachersView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "1E48D842-8FE5-4336-BBB0-AFFEF96DACC6 - f315e619b9bb7fa3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "course_paper.TeachersView.viewModel.modify : course_paper.TeachersViewModel with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "course-paper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yankurkin/Projects/Course%20paper/Timetable/course-paper/View/TeachersView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "1E48D842-8FE5-4336-BBB0-AFFEF96DACC6 - 89e4b6af8f9f8e96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "course_paper.TeachersView.$viewModel.getter : SwiftUI.ObservedObject&lt;course_paper.TeachersViewModel&gt;.Wrapper"
+                  moduleName = "course-paper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yankurkin/Projects/Course%20paper/Timetable/course-paper/View/TeachersView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
