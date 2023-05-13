@@ -10,16 +10,22 @@ struct CoursesView: View {
     }
     
     var body: some View {
+        
         NavigationStack {
             VStack {
                 List(viewModel.courses) { course in
                     NavigationLink(destination: GroupsView(course: course)) {
-                        Text(course.title ?? "Unknown course")
+                        Text(course.unwrappedTitle)
                     }
                 }
             }
-            .background(Color(.systemGray6))
+            .onAppear() {
+                if viewModel.courses.isEmpty {
+                    viewModel.uploadCourses()
+                }
+            }
         }
+        .background(Color(.systemGray6))
     }
 }
 

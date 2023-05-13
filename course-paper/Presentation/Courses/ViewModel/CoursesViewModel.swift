@@ -10,6 +10,17 @@
             fetchCourseData()
         }
         
+        func uploadCourses() {
+            self.addCourseToCoreData(title: "1 курс", url:
+                                        "https://mmf.bsu.by/ru/raspisanie-zanyatij/dnevnoe-otdelenie/1-kurs/")
+            self.addCourseToCoreData(title: "2 курс", url:
+                                        "https://mmf.bsu.by/ru/raspisanie-zanyatij/dnevnoe-otdelenie/2-kurs/")
+            self.addCourseToCoreData(title: "3 курс", url:
+                                        "https://mmf.bsu.by/ru/raspisanie-zanyatij/dnevnoe-otdelenie/3-kurs/")
+            self.addCourseToCoreData(title: "4 курс", url:
+                                        "https://mmf.bsu.by/ru/raspisanie-zanyatij/dnevnoe-otdelenie/4-kurs/")
+        }
+        
         func fetchCourseData() {
             let request = NSFetchRequest<Course>(entityName: "Course")
             

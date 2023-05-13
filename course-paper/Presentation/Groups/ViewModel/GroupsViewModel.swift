@@ -14,26 +14,15 @@ class GroupsViewModel: ObservableObject {
     }
     
     @MainActor
-    func loadData() async throws {
+    func downloadAndPersistData() async throws {
         isLoading = true
         let apiService = APIService(url: course.unwrappedURL)
-                
-        do {
-            let html = try await apiService.getHTML()
-
-            let doc = try SwiftSoup.parse(html)
-            let groupContent = try doc.select(Constants.groupContainerClassName)
-            let groupLinks = try groupContent.select("a")
-            
-            for groupLink in groupLinks.array() {
-                let name = try groupLink.text()
-                let link = try groupLink.attr("href")
-                
-                addGroupToCoreData(name: name, url: link)
-            }
-            
-        }  catch let error as NSError {
-            print("Error: \(error.localizedDescription)")
+        let groupLoader = GroupLoader(apiService: apiService)
+        
+        let groups = await groupLoader.loadData()
+        
+        for group in groups {
+            addGroupToCoreData(name: group.name, url: group.url)
         }
         
         isLoading = false

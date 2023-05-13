@@ -32,17 +32,16 @@ extension Group {
     
     public var lessonArray: [Lesson] {
         let set = lesson as? Set<Lesson> ?? []
-        
-        let weekdayPriority = ["Понедельник": 0,
-                               "Вторник": 1,
-                               "Среда": 2,
-                               "Четверг": 3,
-                               "Пятница": 4,
-                               "Суббота": 5]
-        
-        return set.sorted {
-            weekdayPriority[$0.unwrappedWeekDay]! < weekdayPriority[$1.unwrappedWeekDay]!
+                
+        return set.sorted { (lesson1, lesson2) -> Bool in
+            if Constants.weekdayPriority[lesson1.unwrappedWeekDay]! == Constants.weekdayPriority[lesson2.unwrappedWeekDay]! {
+                return lesson1.unwrappedTimeStart < lesson2.unwrappedTimeStart
+            } else {
+                return Constants.weekdayPriority[lesson1.unwrappedWeekDay]! < Constants.weekdayPriority[lesson2.unwrappedWeekDay]!
+            }
         }
+        
+        
     }
 }
 

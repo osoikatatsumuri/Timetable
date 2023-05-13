@@ -2,11 +2,6 @@ import Foundation
 import SwiftSoup
 
 class ScheduleHTMLParser {
-    var apiService: APIService
-    
-    init(url: String) {
-        apiService = APIService(url: url)
-    }
     
     private func typeOfClassProcessor(type: String) -> String {
         if type == "л" {
@@ -18,13 +13,39 @@ class ScheduleHTMLParser {
         return type
     }
     
+    public func parseLessonTime(time: String) -> [Date] {
+        let pattern = "–|-"
+        let timeComponents = time.components(separatedBy: CharacterSet(charactersIn: pattern))
+        var times: [Date] = []
+        
+        for item in timeComponents {
+            times.append(self.timeParser(time: String(item)))
+        }
+    
+        return times
+    }
+    
+    public func timeParser(time: String) -> Date {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "HH:mm"
+         let dateFromStr = dateFormatter.date(from: time)!
+        
+        return dateFromStr
+    }
+    
     public func parseSubject(subjectRow: Element) -> LessonData? {
         do {
-            let timeRegex = /\d{1,2}.\d{2}-\d{1,2}.\d{2}/
+            let timeRegex = /[^\(]\d{1,2}.\d{2}-\d{1,2}.\d{2}[^\)]/
             
             let subjectTeachers = try subjectRow.select(Constants.subjectTeacherClassName)
             let weekDay = try subjectRow.select(Constants.weekdayClassName).text()
             var time = try subjectRow.select(Constants.timeClassName).text()
+            
+            let beginAndEndTime = parseLessonTime(time: time)
+            var beginTime = beginAndEndTime[0]
+            var endTime = beginAndEndTime[1]
+            
             let group = try subjectRow.select(Constants.groupClassName).text()
             var typeOfClass = try subjectRow.select(Constants.typeClassName).text()
             let auditorium = try subjectRow.select(Constants.auditoriumClassName).text()
@@ -41,6 +62,10 @@ class ScheduleHTMLParser {
             if subjectTeachersText.contains(timeRegex) {
                 if let match = subjectTeachersText.firstMatch(of: timeRegex) {
                     time = String(match.0)
+                    let newBeginAndEndTime = parseLessonTime(time: time)
+                    beginTime = newBeginAndEndTime[0]
+                    endTime = newBeginAndEndTime[1]
+                    
                     subjectTeachersText.replace(timeRegex, with: "")
                 }
             } else {
@@ -51,7 +76,8 @@ class ScheduleHTMLParser {
             
             return LessonData(
                             weekDay: weekDay,
-                            time: time,
+                            timeStart: beginTime,
+                            timeEnd: endTime,
                             group: currentGroup,
                             weekNumber: weekNumber,
                             subject: subjectName,

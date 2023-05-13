@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct SubjectView: View {
+struct SubjectCard: View {
     
     @State var lesson: Lesson
     
     var body: some View {
+            
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
                     Text(lesson.unwrappedWeekDay)
@@ -20,7 +21,7 @@ struct SubjectView: View {
                     
                     Spacer()
                     
-                    Text(lesson.unwrappedTime)
+                    Text(lesson.unwrappedTimeStartAsString + Constants.timeSeparator + lesson.unwrappedTimeEndAsString)
                         .font(.headline)
                         .foregroundColor(Color("TextColor"))
                 }
