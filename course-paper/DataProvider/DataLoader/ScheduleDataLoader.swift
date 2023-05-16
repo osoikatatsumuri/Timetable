@@ -1,18 +1,19 @@
 import Foundation
 import SwiftSoup
 
-class ScheduleLoader {
+class ScheduleDataLoader {
     let apiService: APIService
     
     init(apiService: APIService) {
         self.apiService = apiService
     }
     
-    func loadData(html: String) async -> [LessonData] {
+    func loadData() async -> [LessonData] {
         var schedule: [LessonData] = []
         let parser = ScheduleHTMLParser()
         
         do {
+            let html = try await apiService.getHTML()
             let doc = try SwiftSoup.parse(html)
             let rowsOfSchedule = try doc.select("tr")
             

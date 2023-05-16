@@ -4,8 +4,7 @@ import Foundation
 class CalendarManager {
     let dateFormatter = DateFormatter()
     let calendar = Calendar.current
-    let currentDate = Date()
-    
+    let currentDate: Date = Date()
     
     let semesterBeginDate: Date
     
@@ -19,7 +18,7 @@ class CalendarManager {
         }
         
     }
-
+    
     func getWeekNumber(date: Date) -> Int {
         let weekOfYear = calendar.component(.weekOfYear, from: date)
         return weekOfYear

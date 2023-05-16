@@ -1,16 +1,15 @@
 import SwiftSoup
 import SwiftUI
+import CoreData //
 
 struct CoursesView: View {
     @ObservedObject var viewModel: CoursesViewModel
     
     init() {
         self.viewModel = CoursesViewModel()
-        viewModel.fetchCourseData()
     }
     
     var body: some View {
-        
         NavigationStack {
             VStack {
                 List(viewModel.courses) { course in
@@ -22,6 +21,8 @@ struct CoursesView: View {
             .onAppear() {
                 if viewModel.courses.isEmpty {
                     viewModel.uploadCourses()
+                } else {
+                    viewModel.updateAppLaunchDate()
                 }
             }
         }

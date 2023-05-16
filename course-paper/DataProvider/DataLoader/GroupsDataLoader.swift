@@ -1,7 +1,7 @@
 import Foundation
 import SwiftSoup
 
-class GroupLoader {
+class GroupDataLoader {
     let apiService: APIService
     
     init(apiService: APIService) {

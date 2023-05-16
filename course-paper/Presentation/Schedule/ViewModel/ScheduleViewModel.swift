@@ -39,11 +39,11 @@ class ScheduleViewModel: ObservableObject {
         isLoading = true
         
         let apiService = APIService(url: group.unwrappedURL)
-        let loader = ScheduleLoader(apiService: apiService)
+        let loader = ScheduleDataLoader(apiService: apiService)
         
         do {
             let html = try await apiService.getHTML()
-            let fetchedLessons = await loader.loadData(html: html)
+            let fetchedLessons = await loader.loadData()
             
             for lesson in fetchedLessons {
                 addLessonToCoreData(lesson: lesson)
@@ -59,30 +59,22 @@ class ScheduleViewModel: ObservableObject {
     }
     
     func addLessonToCoreData(lesson: LessonData) {
-        let lessonDTO = Lesson(context: context)
+        let lessonCoreData = Lesson(context: context)
         
-        lessonDTO.id = UUID()
-        lessonDTO.auditorium = lesson.auditorium
-        lessonDTO.group = lesson.group
-        lessonDTO.subjectName = lesson.subject
-        lessonDTO.subjectType = lesson.subjectType
-        lessonDTO.teacherName = lesson.teacher
-        lessonDTO.timeStart = lesson.timeStart
-        lessonDTO.timeEnd = lesson.timeEnd
-        lessonDTO.weekDay = lesson.weekDay
-        lessonDTO.weekNumber = Int64(lesson.weekNumber ?? 0)
+        lessonCoreData.id = UUID()
+        lessonCoreData.auditorium = lesson.auditorium
+        lessonCoreData.group = lesson.group
+        lessonCoreData.subjectName = lesson.subject
+        lessonCoreData.subjectType = lesson.subjectType
+        lessonCoreData.teacherName = lesson.teacher
+        lessonCoreData.timeStart = lesson.timeStart
+        lessonCoreData.timeEnd = lesson.timeEnd
+        lessonCoreData.weekDay = lesson.weekDay
+        lessonCoreData.weekNumber = Int64(lesson.weekNumber ?? 0)
         
-        group.addToLesson(lessonDTO)
+        group.addToLesson(lessonCoreData)
         
-        save()
+        DataManager.shared.save()
         fetchSchedule()
-    }
-    
-    func save() {
-        do {
-            try context.save()
-        } catch {
-            print("Error while saving")
-        }
     }
 }

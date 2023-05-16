@@ -17,7 +17,7 @@ class GroupsViewModel: ObservableObject {
     func downloadAndPersistData() async throws {
         isLoading = true
         let apiService = APIService(url: course.unwrappedURL)
-        let groupLoader = GroupLoader(apiService: apiService)
+        let groupLoader = GroupDataLoader(apiService: apiService)
         
         let groups = await groupLoader.loadData()
         
@@ -39,15 +39,7 @@ class GroupsViewModel: ObservableObject {
         group.url = url
         
         course.addToGroup(group)
-        save()
+        DataManager.shared.save()
         fetchGroups()
-    }
-    
-    func save() {
-        do {
-            try context.save()
-        } catch {
-            print("Error, while saving")
-        }
     }
 }
